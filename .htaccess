@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Redirect to index
+RewriteRule ^$ "index.php" [L]
+
+RewriteRule ^index$ "index.php" [L]
+
+# Redirect to error page
+RewriteRule ^error$ "error.php" [L]
+
+# Redirect to dashboard
+RewriteRule ^common$ "components/common.php" [L]
+
+# Redirect to professor
+RewriteRule ^manager$ "components/manager.php" [L]
