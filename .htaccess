@@ -11,5 +11,20 @@ RewriteRule ^error$ "error.php" [L]
 # Redirect to dashboard
 RewriteRule ^common$ "components/common.php" [L]
 
+# Redirect to register
+RewriteRule ^register$ "components/register.php" [L]
+
+# Redirect to logout
+RewriteRule ^logout$ "components/logout.php" [L]
+
 # Redirect to professor
 RewriteRule ^manager$ "components/manager.php" [L]
+
+# Redirect to add balance
+RewriteRule ^addbalance$ "components/edit_balance.php" [L]
+
+# Redirect to extract balance
+RewriteRule ^extrato$ "components/extrato.php" [L]
+
+# Redirect to transfer balance
+RewriteRule ^transfer$ "components/transfer.php" [L]

@@ -23,7 +23,7 @@
             $updateBalance = $conn->prepare('UPDATE users SET balance = :balance WHERE id = :id');
             $updateBalance->execute(['balance' => $newBalance, 'id' => $userID]);
             echo '<script>alert("Balance added successfully.");</script>';
-            echo '<script>window.location.href = "'.ROOT.'/components/common.php";</script>';
+            echo '<script>window.location.href = "'.ROOT.'/common";</script>';
 
             $log = $conn->prepare('INSERT INTO logs (user_id, balance, datatime) VALUES (:user_id, :balance, :datatime)');
             $log->execute(['user_id' => $userID, 'balance' => $balance, 'datatime' => date('Y-m-d H:i:s')]);

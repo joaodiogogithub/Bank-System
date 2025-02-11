@@ -43,13 +43,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 setcookie('last_login', 'true', time() + 86400);
                 setcookie('user_id', $_SESSION['id'], time() + 86400);
                 setcookie('user_acess_level', $_SESSION['acess_level'], time() + 86400);
-                echo '<script>window.location.href = "components/common.php";</script>';
+                echo '<script>window.location.href = "common";</script>';
 
             } else if($_SESSION['acess_level']==='admin'){
                 setcookie('last_login', 'true', time() + 86400);
                 setcookie('user_id', $_SESSION['id'], time() + 86400);
                 setcookie('user_acess_level', $_SESSION['acess_level'], time() + 86400);
-                echo '<script>window.location.href = "components/manager.php";</script>';
+                echo '<script>window.location.href = "manager";</script>';
             }
             exit;
         } else {
@@ -80,4 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </form>
+    <div class="d-flex justify-content-center">
+        <a href="register" class="btn btn-link">Register</a>
+    </div>
 </div>
