@@ -47,6 +47,32 @@
         </div>
 
         <div class="col-6" style="background-color: green; height: 100vh;">
+            <h2 class="text-white mt-5">Register New User</h2>
+            <form action="register" method="POST" class="text-white">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="balance">Balance:</label>
+                    <input type="number" class="form-control" id="balance" name="balance" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                <div class="form-group">
+                    <label for="acess_level">Access Level:</label>
+                    <select class="form-control" id="acess_level" name="acess_level" required>
+                        <option value="common">Common</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Register</button>
+            </form>
         </div>
 </div>
 <?php include_once "./../foot.php"; ?>
