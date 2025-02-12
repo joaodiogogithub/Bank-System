@@ -60,27 +60,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <!-- Begin page content -->
-<div class="container">
-    <form class="mt-4" method="post" action="" id="login-form" style="max-width: 400px; margin: 0 auto;">
+<div class="d-flex justify-content-between align-items-center" style="height: 100vh;">
+    <form method="post" action="" id="login-form" class="col-6">
         <!-- Form elements -->
-        <div class="form-group mb-2 position-relative check-valid">
-            <div class="input-group input-group-lg mb-2">
-                <span class="input-group-text text-theme bg-white border-end-0" style="height:40px;"><i class="bi bi-envelope" style="color:black;"></i></span>
-                <div class="form-floating">
+        <h1 class="text-center">Login</h1>
+        <div class="d-flex justify-content-center align-items-center" style="height: 100%; width: 100%; background-color: ; border-radius: 10px;">
+            <div class="form-group mb-2 position-relative check-valid" >
+                <div class="input-group input-group-lg mb-2">
+                    <span class="input-group-text text-theme bg-white border-end-0" style="height:40px;"><i class="bi bi-envelope" style="color:black;"></i></span>
+                    <div class="form-floating">
                     <input type="email" name="email" placeholder="Email Address" class="form-control border-start-0" autofocus id="email" style="height:40px;">
+                    </div>
                 </div>
-            </div>
 
-            <div class="input-group">
-                <span class="input-group-text text-theme bg-white border-end-0" style="height:40px;"><i class="bi bi-lock" style="color:black; "></i></span>
-                <div class="form-floating">
+                <div class="input-group">
+                    <span class="input-group-text text-theme bg-white border-end-0" style="height:40px;"><i class="bi bi-lock" style="color:black; "></i></span>
+                    <div class="form-floating">
                     <input type="password" name="password" placeholder="Password" class="form-control border-start-0" autofocus id="password" style="height:40px;">
+                    </div>
+                    <button class="btn btn-theme btn-success z-index-5 ml-2" type="submit" id="submitbtn" style=" width:100px; height:40px;"><i class="bi bi-arrow-right text-light"></i></button>
                 </div>
-                <button class="btn btn-theme btn-primary z-index-5 ml-2" type="submit" id="submitbtn" style=" width:100px; height:40px;"><i class="bi bi-arrow-right text-light"></i></button>
+
+                <div class="d-flex justify-content-center">
+                    <a href="register" class="btn btn-link" style="color:green;">Register</a>
+                </div>
             </div>
         </div>
     </form>
-    <div class="d-flex justify-content-center">
-        <a href="register" class="btn btn-link">Register</a>
-    </div>
+    <div class="col-12" style="height: 100vh; background-color: green; overflow: hidden;"></div>
 </div>

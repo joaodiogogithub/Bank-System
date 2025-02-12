@@ -28,3 +28,9 @@ RewriteRule ^extrato$ "components/extrato.php" [L]
 
 # Redirect to transfer balance
 RewriteRule ^transfer$ "components/transfer.php" [L]
+
+# Redirect to users list
+RewriteRule ^usersList$ "components/manage_users.php" [L]
+
+# Redirect to extract list
+RewriteRule ^extractList$ "components/manage_extratos.php" [L]

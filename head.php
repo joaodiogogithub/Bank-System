@@ -31,4 +31,4 @@
     <!-- style css for this template -->
     <link src="assets/scss/style.css" rel="stylesheet" id="style">
 </head>
-<body>
+<body style="background-color:antiquewhite; overflow: hidden;">

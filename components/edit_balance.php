@@ -25,22 +25,34 @@
             echo '<script>alert("Balance added successfully.");</script>';
             echo '<script>window.location.href = "'.ROOT.'/common";</script>';
 
-            $log = $conn->prepare('INSERT INTO logs (user_id, balance, datatime) VALUES (:user_id, :balance, :datatime)');
-            $log->execute(['user_id' => $userID, 'balance' => $balance, 'datatime' => date('Y-m-d H:i:s')]);
+            if($balance < 0){
+                $plus_minus = '-';
+            } else {
+                $plus_minus = '+';
+            }
+
+            $type = 'addBalance';
+            $log = $conn->prepare('INSERT INTO logs (user_id, balance, datatime, plus_minus, tipe) VALUES (:user_id, :balance, :datatime, :plus_minus, :tipe)');
+            $log->execute(['user_id' => $userID, 'balance' => $balance, 'datatime' => date('Y-m-d H:i:s'), 'plus_minus' => $plus_minus, 'tipe' => $type]);
         }
     }
 ?>
 
 <?php include_once './../head.php'; ?>
-    <div class="container mt-4">
-        <a href="<?= ROOT ?>/components/common.php" class="btn btn-primary mb-2">Back</a>
-        <h2>Your balance:<?= $userData["balance"]?></h2>
-        <form action="<?= ROOT ?>/components/edit_balance.php" method="post">
-            <div class="form-group">
-                <label for="balance">Add balance</label>
-                <input type="number" class="form-control" id="balance" name="balance" required>
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="col-6">
+                <a href="<?= ROOT ?>/components/common.php" class="btn btn-danger mb-2">Back</a>
+                <h2>Your balance:<?= $userData["balance"]?></h2>
+                <form action="<?= ROOT ?>/components/edit_balance.php" method="post">
+                    <div class="form-group">
+                        <label for="balance">Add balance</label>
+                        <input type="number" class="form-control" id="balance" name="balance" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Confirmar</button>
+                </form>
             </div>
-            <button type="submit" class="btn btn-primary">Confirmar</button>
-        </form>
-    </div>
+
+            <div class="col-6" style="background-color: green; height: 100vh;">
+            </div>
+        </div>
 <?php include_once "./../foot.php"; ?>

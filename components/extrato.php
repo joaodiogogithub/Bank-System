@@ -7,7 +7,7 @@
     $accessLevel = $_SESSION['acess_level'];
 
     if(isset($userID) && $accessLevel==='common'){
-        $getUserData = $conn->prepare('SELECT datatime, balance FROM logs WHERE user_id = :id');
+        $getUserData = $conn->prepare('SELECT datatime, balance, tipe, plus_minus FROM logs WHERE user_id = :id');
         $getUserData->execute(['id' => $userID]);
         $userData = $getUserData->fetchAll(PDO::FETCH_ASSOC);
     } else {
@@ -17,12 +17,14 @@
 
 <?php include_once './../head.php'; ?>
     <div class="container mt-4">
-        <a href="<?= ROOT ?>/components/common.php" class="btn btn-primary mb-2">Back</a>
+        <a href="<?= ROOT ?>/components/common.php" class="btn btn-danger mb-2">Back</a>
         <table class="table table-striped">
             <thead>
             <tr>
                 <th>Date</th>
                 <th>Balance</th>
+                <th>Type</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -31,6 +33,8 @@
                 echo '<tr>';
                 echo '<td>'.$log["datatime"].'</td>';
                 echo '<td>'.$log["balance"].'</td>';
+                echo '<td>'.$log["tipe"].'</td>';
+                echo '<td>'.$log["plus_minus"].'</td>';
                 echo '</tr>';
             }
             ?>
