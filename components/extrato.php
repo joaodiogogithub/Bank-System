@@ -16,8 +16,8 @@
 ?>
 
 <?php include_once './../head.php'; ?>
-    <div class="container mt-4">
-        <a href="<?= ROOT ?>/components/common.php" class="btn btn-danger mb-2">Back</a>
+    <div class="container">
+        <a href="<?= ROOT ?>/components/common.php" class="btn btn-danger mt-2 mb-2">Back</a>
         <table class="table table-striped">
             <thead>
             <tr>

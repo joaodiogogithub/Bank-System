@@ -39,9 +39,9 @@
 ?>
 
 <?php include_once './../head.php'; ?>
-        <div class="d-flex justify-content-center align-items-center">
+        <div class="d-flex justify-content-center">
             <div class="col-6">
-                <a href="<?= ROOT ?>/components/common.php" class="btn btn-danger mb-2">Back</a>
+                <a href="<?= ROOT ?>/components/common.php" class="btn btn-danger mt-2 mb-2">Back</a>
                 <h2>Your balance:<?= $userData["balance"]?></h2>
                 <form action="<?= ROOT ?>/components/edit_balance.php" method="post">
                     <div class="form-group">

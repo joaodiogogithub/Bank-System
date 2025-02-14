@@ -14,12 +14,14 @@
     $getUsers = $conn->prepare('SELECT id, name, balance FROM users WHERE acess_level = :acess_level');
     $getUsers->execute(['acess_level' => 'common']);
     $users = $getUsers->fetchAll(PDO::FETCH_ASSOC);
+
+    
 ?>
 
 <?php include_once './../head.php'; ?>
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center">
         <div class="col-6">
-            <a href="<?= ROOT ?>/manager" class="btn btn-danger mt-5 mb-5">Back</a>
+            <a href="<?= ROOT ?>/manager" class="btn btn-danger mt-2 mb-5">Back</a>
             <div class="">
             <table class="table table-striped">
             <thead>
@@ -36,8 +38,8 @@
                 echo '<tr>';
                 echo '<td>'.$user["name"].'</td>';
                 echo '<td>'.$user["balance"].'</td>';
-                echo '<td><a class="btn btn-primary">Edit</a></td>';
-                echo '<td><a class="btn btn-danger">X</a></td>';
+                echo '<td><a href="editUser/'.$user['id'].'" class="btn btn-primary">Edit</a></td>';
+                echo '<td><a href="deleteUser/'.$user['id'].'" class="btn btn-danger">X</a></td>';
                 echo '</tr>';
             }
             ?>
@@ -48,10 +50,14 @@
 
         <div class="col-6" style="background-color: green; height: 100vh;">
             <h2 class="text-white mt-5">Register New User</h2>
-            <form action="register" method="POST" class="text-white">
+            <form action="regUser" method="POST" class="text-white">
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="form-group">
                     <label for="balance">Balance:</label>

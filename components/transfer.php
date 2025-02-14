@@ -55,9 +55,9 @@
 ?>
 
 <?php include_once './../head.php'; ?>
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center">
         <div class="col-6">
-            <a href="<?= ROOT ?>/common" class="btn btn-danger mt-5 mb-5">Back</a>
+            <a href="<?= ROOT ?>/common" class="btn btn-danger mt-2 mb-5">Back</a>
             <div class="row">
                 <form action="" method="post" class="col-12">
                 <p for="user_id" class="form-label">Who will the transfer be for?</p>
@@ -69,7 +69,7 @@
                     }
                     ?>
                 </select>
-                <p class="mt-5">Your balance: <strong><?= $userBalance ?></strong></strong></p>
+                <p class="mt-3">Your balance: <strong><?= $userBalance ?></strong></strong></p>
                 <div class="mb-3">
                         <label for="value" class="form-label">How many you want to Transfer ?</label>
                         <input type="number" class="form-control" id="value" name="value">

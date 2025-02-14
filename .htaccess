@@ -34,3 +34,12 @@ RewriteRule ^usersList$ "components/manage_users.php" [L]
 
 # Redirect to extract list
 RewriteRule ^extractList$ "components/manage_extratos.php" [L]
+
+# Redirect to register for manager 
+RewriteRule ^regUser$ "components/reg.php" [L]
+
+# Redirect to edit user with user ID
+RewriteRule ^editUser/([0-9]+)$ "components/edit_user.php?user_id=$1" [L]
+
+# Redirect to delete user
+RewriteRule ^deleteUser/([0-9]+)$ "components/delete_user.php?user_id=$1" [L]

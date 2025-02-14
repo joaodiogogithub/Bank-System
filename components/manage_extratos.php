@@ -17,9 +17,9 @@
 ?>
 
 <?php include_once './../head.php'; ?>
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center">
         <div class="col-6">
-            <a href="<?= ROOT ?>/manager" class="btn btn-danger mt-5 mb-5">Back</a>
+            <a href="<?= ROOT ?>/manager" class="btn btn-danger mt-2 mb-5">Back</a>
             <div class="">
             <table class="table table-striped">
             <thead>

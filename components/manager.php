@@ -15,9 +15,9 @@
 ?>
 <!-- Manager -->
 <?php include_once './../head.php'; ?>
-<div class="d-flex justify-content-center align-items-center">
+<div class="d-flex">
     <div class="col-6">
-        <a href="<?= ROOT ?>/logout" class="btn btn-danger mt-5 mb-5">Logout</a>
+        <a href="<?= ROOT ?>/logout" class="btn btn-danger mt-2 mb-5">Logout</a>
         <h1 class="mt-2 mb-5">Welcome, <?php echo $userData['name']; ?></h1>
         <div class="">
             <div class="d-flex flex-column w-50">
